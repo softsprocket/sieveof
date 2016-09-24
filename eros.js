@@ -29,7 +29,8 @@ var sieve = function (m) {
 	var a = gen_array (2, m);
 	var position = 0;
 	
-	while (position < a.length) {
+	var max = Math.floor (Math.sqrt (m));
+	while (position < a.length && a[position] <= max) {
 		a = remove_multiples (a, a[position]);
 		++position;
 	}
@@ -37,5 +38,7 @@ var sieve = function (m) {
 	return a;
 };
 
-		
+var a = sieve (100);
+
+console.log (a);
 	
